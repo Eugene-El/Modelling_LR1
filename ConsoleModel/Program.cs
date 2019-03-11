@@ -13,7 +13,7 @@ namespace ConsoleModel
     {
         static void Main(string[] args)
         {
-            AbstractGenerator generator = new UniformGenerator();
+            AbstractGenerator generator = new ErlangGenerator();
             
             Histogram hist = new Histogram(generator.Next(1000000), 50);
             hist.Draw(DrawMode.SaveAndOpen, 1000, 700);

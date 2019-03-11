@@ -10,9 +10,9 @@ namespace StatisticLib.LogicModels
 {
     public class Histogram
     {
-        public List<Range> Ranges { get; }
-        public double RangesFrom { get; }
-        public double RangesTo { get; }
+        public List<Range> Ranges { get; private set; }
+        public double RangesFrom { get; private set; }
+        public double RangesTo { get; private set; }
         public int MaxCount { get { return Ranges.Max(r => r.Count); } }
 
         public Histogram(List<double> values, uint rangeCount = 15)

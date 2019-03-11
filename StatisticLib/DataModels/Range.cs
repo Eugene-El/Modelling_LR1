@@ -8,8 +8,8 @@ namespace StatisticLib.DataModels
 {
     public class Range
     {
-        public double From { get; }
-        public double To { get; }
+        public double From { get; private set; }
+        public double To { get; private set; }
         public int Count { get { return list.Count; } }
 
         private List<double> list;

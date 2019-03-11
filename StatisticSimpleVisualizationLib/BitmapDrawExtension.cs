@@ -39,6 +39,7 @@ namespace StatisticSimpleVisualizationLib
                 int workingMaxHeight = heightWithoutBorder - heightInsideBorder;
 
                 // Drawing ranges
+                Graphics g = Graphics.FromImage(bitmap);
                 for (int i = 0; i < histogram.Ranges.Count; i++)
                 {
                     int rangeHeight = (int)((double)histogram.Ranges[i].Count / histogram.MaxCount * workingMaxHeight);
@@ -56,19 +57,28 @@ namespace StatisticSimpleVisualizationLib
                     {
                         for (int j = 1; j <= heightBorder / 8; j++)
                             bitmap.SetPixel(widthBorder + widthInsideBorder + (rangeWidth * (i + (isLast? 1 : 0)) - (isLast? 1 : 0)), height - heightBorder + j, Color.Black);
-                        Graphics g = Graphics.FromImage(bitmap);
                         g.DrawString((isLast? histogram.Ranges[i].To : histogram.Ranges[i].From).ToString("F3"),
                             new Font("Arial", width/75),
                             Brushes.Black,
                             widthBorder + widthInsideBorder + rangeWidth * (i - (isLast? 0 : 1)),
                             height - heightBorder + heightBorder / 8);
-
-                        g.Flush();
                     }
                 }
 
                 // Draw left labels
-                // TODO
+                for (int i = 0; i <= 10; i++)
+                {
+                    for (int j = 1; j <= widthBorder / 12; j++)
+                        bitmap.SetPixel(widthBorder - j, (int)(height - heightBorder - ((float)workingMaxHeight / 10 * i)), Color.Black);
+                    g.DrawString((histogram.MaxCount / 10 * i).ToString(),
+                            new Font("Arial", height / 75),
+                            Brushes.Black,
+                            widthBorder - widthBorder / 15,
+                            height - heightBorder - ((float)workingMaxHeight / 10 * i) - height / 75 , new StringFormat() { Alignment = StringAlignment.Far });
+                }
+                g.Flush();
+                g.Dispose();
+
 
                 // Saving
                 switch (drawMode)
