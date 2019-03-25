@@ -30,6 +30,7 @@
         {
             this.histogramPicBox = new System.Windows.Forms.PictureBox();
             this.configurationBox = new System.Windows.Forms.GroupBox();
+            this.distributionBox = new System.Windows.Forms.GroupBox();
             this.seedBox = new System.Windows.Forms.GroupBox();
             this.seedNumeric = new System.Windows.Forms.NumericUpDown();
             this.useRandomSeedCheck = new System.Windows.Forms.CheckBox();
@@ -62,15 +63,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.histogramPicBox.Location = new System.Drawing.Point(14, 13);
             this.histogramPicBox.Name = "histogramPicBox";
-            this.histogramPicBox.Size = new System.Drawing.Size(316, 259);
+            this.histogramPicBox.Size = new System.Drawing.Size(516, 536);
             this.histogramPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.histogramPicBox.TabIndex = 0;
             this.histogramPicBox.TabStop = false;
             // 
             // configurationBox
             // 
-            this.configurationBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.configurationBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.configurationBox.Controls.Add(this.distributionBox);
             this.configurationBox.Controls.Add(this.seedBox);
             this.configurationBox.Controls.Add(this.elementsCountNumeric);
             this.configurationBox.Controls.Add(this.elementsCountLbl);
@@ -82,12 +83,23 @@
             this.configurationBox.Controls.Add(this.heightLbl);
             this.configurationBox.Controls.Add(this.widthNumeric);
             this.configurationBox.Controls.Add(this.widthLbl);
-            this.configurationBox.Location = new System.Drawing.Point(336, 13);
+            this.configurationBox.Location = new System.Drawing.Point(536, 13);
             this.configurationBox.Name = "configurationBox";
-            this.configurationBox.Size = new System.Drawing.Size(236, 437);
+            this.configurationBox.Size = new System.Drawing.Size(236, 332);
             this.configurationBox.TabIndex = 1;
             this.configurationBox.TabStop = false;
             this.configurationBox.Text = "Configuration";
+            this.configurationBox.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBoxesPaint);
+            // 
+            // distributionBox
+            // 
+            this.distributionBox.Location = new System.Drawing.Point(12, 230);
+            this.distributionBox.Name = "distributionBox";
+            this.distributionBox.Size = new System.Drawing.Size(214, 96);
+            this.distributionBox.TabIndex = 11;
+            this.distributionBox.TabStop = false;
+            this.distributionBox.Text = "Distribution";
+            this.distributionBox.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBoxesPaint);
             // 
             // seedBox
             // 
@@ -99,10 +111,12 @@
             this.seedBox.TabIndex = 10;
             this.seedBox.TabStop = false;
             this.seedBox.Text = "Seed";
+            this.seedBox.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBoxesPaint);
             // 
             // seedNumeric
             // 
-            this.seedNumeric.BackColor = System.Drawing.Color.SaddleBrown;
+            this.seedNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.seedNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
             this.seedNumeric.Location = new System.Drawing.Point(6, 43);
             this.seedNumeric.Maximum = new decimal(new int[] {
             2147483647,
@@ -134,7 +148,8 @@
             // 
             // elementsCountNumeric
             // 
-            this.elementsCountNumeric.BackColor = System.Drawing.Color.SaddleBrown;
+            this.elementsCountNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.elementsCountNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
             this.elementsCountNumeric.Location = new System.Drawing.Point(111, 126);
             this.elementsCountNumeric.Maximum = new decimal(new int[] {
             1000000,
@@ -166,7 +181,8 @@
             // 
             // groupCountNumeric
             // 
-            this.groupCountNumeric.BackColor = System.Drawing.Color.SaddleBrown;
+            this.groupCountNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupCountNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
             this.groupCountNumeric.Location = new System.Drawing.Point(93, 100);
             this.groupCountNumeric.Maximum = new decimal(new int[] {
             1000,
@@ -207,7 +223,10 @@
             // 
             // distributionCmb
             // 
+            this.distributionCmb.BackColor = System.Drawing.SystemColors.ControlLight;
             this.distributionCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.distributionCmb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.distributionCmb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
             this.distributionCmb.FormattingEnabled = true;
             this.distributionCmb.Items.AddRange(new object[] {
             "Uniform",
@@ -220,7 +239,8 @@
             // 
             // heightNumeric
             // 
-            this.heightNumeric.BackColor = System.Drawing.Color.SaddleBrown;
+            this.heightNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.heightNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
             this.heightNumeric.Increment = new decimal(new int[] {
             100,
             0,
@@ -257,7 +277,8 @@
             // 
             // widthNumeric
             // 
-            this.widthNumeric.BackColor = System.Drawing.Color.SaddleBrown;
+            this.widthNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.widthNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
             this.widthNumeric.Increment = new decimal(new int[] {
             100,
             0,
@@ -294,11 +315,11 @@
             // 
             // generateBtn
             // 
-            this.generateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.generateBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.generateBtn.Location = new System.Drawing.Point(235, 278);
+            this.generateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.generateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
+            this.generateBtn.Location = new System.Drawing.Point(536, 351);
             this.generateBtn.Name = "generateBtn";
-            this.generateBtn.Size = new System.Drawing.Size(95, 172);
+            this.generateBtn.Size = new System.Drawing.Size(236, 29);
             this.generateBtn.TabIndex = 3;
             this.generateBtn.Text = "Generate";
             this.generateBtn.UseVisualStyleBackColor = true;
@@ -306,27 +327,26 @@
             // 
             // numberPageList
             // 
-            this.numberPageList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.numberPageList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numberPageList.Location = new System.Drawing.Point(12, 278);
+            this.numberPageList.Location = new System.Drawing.Point(536, 386);
             this.numberPageList.Name = "numberPageList";
             this.numberPageList.NumberList = null;
-            this.numberPageList.PageSize = 10;
-            this.numberPageList.Size = new System.Drawing.Size(217, 172);
+            this.numberPageList.Size = new System.Drawing.Size(236, 163);
             this.numberPageList.TabIndex = 4;
             // 
             // GeneartionMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SaddleBrown;
-            this.ClientSize = new System.Drawing.Size(584, 461);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(174)))), ((int)(((byte)(212)))));
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.numberPageList);
             this.Controls.Add(this.generateBtn);
             this.Controls.Add(this.configurationBox);
             this.Controls.Add(this.histogramPicBox);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ForeColor = System.Drawing.Color.LawnGreen;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
             this.Name = "GeneartionMainForm";
             this.Text = "Generation application";
             ((System.ComponentModel.ISupportInitialize)(this.histogramPicBox)).EndInit();
@@ -362,6 +382,7 @@
         private System.Windows.Forms.CheckBox useRandomSeedCheck;
         private System.Windows.Forms.NumericUpDown seedNumeric;
         private NumberPageList numberPageList;
+        private System.Windows.Forms.GroupBox distributionBox;
     }
 }
 

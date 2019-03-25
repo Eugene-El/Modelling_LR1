@@ -15,6 +15,13 @@ namespace GenerationApplication
         public NumberPageList()
         {
             InitializeComponent();
+
+            Resize += NumberPageList_Resize;
+        }
+
+        private void NumberPageList_Resize(object sender, EventArgs e)
+        {
+            Page = 0;
         }
 
         private List<double> _numberList;
@@ -30,11 +37,10 @@ namespace GenerationApplication
 
                 Page = 0;
                 numbersList.DataSource = _numberList?.Skip(Page * PageSize).Take(PageSize).ToList();
-
             }
         }
 
-        public int PageSize { get; set; } = 10;
+        public int PageSize { get { return Height / 15; /*numbersList.Height / 14;*/ } }
         public int PageCount { get { return _numberList == null? 0 : ( _numberList.Count / PageSize + ((_numberList.Count % PageSize == 0)? 0 : 1) ); } }
 
         private int _page;
@@ -47,7 +53,8 @@ namespace GenerationApplication
             private set
             {
                 _page = value;
-                pageTxt.Text = _page + " / " + PageCount;
+                pageTxt.Text = PageCount == 0 ? "" : (_page + 1) + " / " + PageCount;
+                numbersList.DataSource = _numberList?.Skip(Page * PageSize).Take(PageSize).ToList();
             }
         }
 
@@ -56,7 +63,6 @@ namespace GenerationApplication
             if (_numberList != null)
             {
                 Page = (Page + 1) % PageCount;
-                numbersList.DataSource = _numberList.Skip(Page * PageSize).Take(PageSize).ToList();
             }
         }
 
@@ -64,8 +70,7 @@ namespace GenerationApplication
         {
             if (_numberList != null)
             {
-                Page = ((Page - 1) < 0 ? PageCount : Page - 1);
-                numbersList.DataSource = _numberList.Skip(Page * PageSize).Take(PageSize).ToList();
+                Page = ((Page - 1) < 0 ? PageCount - 1 : Page - 1);
             }
         }
     }

@@ -15,9 +15,15 @@ namespace GenerationApplication
 {
     public partial class GeneartionMainForm : Form
     {
+        private Color _backgroundColor = Color.FromArgb(184, 174, 212); 
+        private Color _foregroundColor = Color.FromArgb(38, 104, 87);
+
         public GeneartionMainForm()
         {
             InitializeComponent();
+
+            BitmapDrawExtension.BackgroundColor = _backgroundColor;
+            BitmapDrawExtension.HistogramColor = _foregroundColor;
         }
 
         private void generateBtn_Click(object sender, EventArgs e)
@@ -87,6 +93,13 @@ namespace GenerationApplication
             }
         }
 
+        private void groupBoxesPaint(object sender, PaintEventArgs e)
+        {
+            GroupBox box = (GroupBox)sender;
+            e.Graphics.Clear(_backgroundColor);
+            e.Graphics.DrawRectangle(new Pen(_foregroundColor), box.DisplayRectangle);
+            e.Graphics.DrawString(box.Text, box.Font, new SolidBrush(_foregroundColor), 0, 0);
+        }
         
     }
 }
