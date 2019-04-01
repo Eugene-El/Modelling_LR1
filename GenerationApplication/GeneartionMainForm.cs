@@ -28,7 +28,8 @@ namespace GenerationApplication
 
         private void generateBtn_Click(object sender, EventArgs e)
         {
-            string distribution = distributionCmb.Text;
+            
+            string distribution = distributionTabControl.SelectedTab.Text;
             bool useRandomSeed = useRandomSeedCheck.Checked;
             int seed = (int)seedNumeric.Value;
 
@@ -40,18 +41,30 @@ namespace GenerationApplication
                 {
                     case "Uniform":
                         {
-                            generator = useRandomSeed ? new UniformGenerator() : new UniformGenerator(seed);
+                            double a = (double)aNumeric.Value;
+                            double b = (double)bNumeric.Value;
+                            generator = useRandomSeed ? new UniformGenerator(a, b) : new UniformGenerator(seed, a, b);
                             break;
                         }
                     case "Exponential":
                         {
-                            generator = useRandomSeed ? new ExponentialGenerator() : new ExponentialGenerator(seed);
+                            double lambda = (double)lambdaNumeric.Value;
+                            generator = useRandomSeed ? new ExponentialGenerator(lambda) : new ExponentialGenerator(seed, lambda);
                             break;
                         }
                     case "Erlang":
                         {
-                            generator = useRandomSeed ? new ErlangGenerator() : new ErlangGenerator(seed);
+                            double lambda = (double)lambdaErlangNumeric.Value;
+                            int n = (int)nNumeric.Value;
+                            generator = useRandomSeed ? new ErlangGenerator(lambda, n) : new ErlangGenerator(seed, lambda, n);
                             break;
+                        }
+                    case "Normal":
+                        {
+                            double m = (double)mNumeric.Value;
+                            double sigma = (double)sigmaNumeric.Value;
+                            generator = useRandomSeed ? new NormalGenerator(m, sigma) : new NormalGenerator(seed, m, sigma);
+                            break; 
                         }
                     default:
                         {

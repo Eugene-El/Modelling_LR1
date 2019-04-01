@@ -13,9 +13,14 @@ namespace ConsoleModel
     {
         static void Main(string[] args)
         {
-            AbstractGenerator generator = new ErlangGenerator();
+            AbstractGenerator generator = new NormalGenerator();
             
-            Histogram hist = new Histogram(generator.Next(1000000), 50);
+
+            var values = generator.Next(1000000);
+            Console.WriteLine("Max: {0}\nMin: {1}\nAverage: {2}",
+                values.Max(), values.Min(), values.Average());
+
+            Histogram hist = new Histogram(values, 50);
             hist.Draw(DrawMode.SaveAndOpen, 1000, 700);
 
             Console.ReadLine();

@@ -43,6 +43,8 @@
     <Compile Include="AbstractGenerator.cs" />
     <Compile Include="ErlangGenerator.cs" />
     <Compile Include="ExponentialGenerator.cs" />
+    <Compile Include="NormalGenerator.cs" />
+    <Compile Include="PoissonGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UniformGenerator.cs" />
   </ItemGroup>

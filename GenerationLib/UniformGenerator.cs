@@ -28,7 +28,7 @@ namespace GenerationLib
 
         public override double Next()
         {
-            return (double)_random.Next() / int.MaxValue / (_b - _a);
+            return _a + _random.NextDouble() / (_b - _a);
         }
     }
 }
