@@ -37,7 +37,18 @@
             this.aNumeric = new System.Windows.Forms.NumericUpDown();
             this.aLbl = new System.Windows.Forms.Label();
             this.exponentialTab = new System.Windows.Forms.TabPage();
+            this.lambdaNumeric = new System.Windows.Forms.NumericUpDown();
+            this.lambdaLbl = new System.Windows.Forms.Label();
             this.erlangTab = new System.Windows.Forms.TabPage();
+            this.nNumeric = new System.Windows.Forms.NumericUpDown();
+            this.nLbl = new System.Windows.Forms.Label();
+            this.lambdaErlangNumeric = new System.Windows.Forms.NumericUpDown();
+            this.lambdaLbl2 = new System.Windows.Forms.Label();
+            this.normalTab = new System.Windows.Forms.TabPage();
+            this.sigmaNumeric = new System.Windows.Forms.NumericUpDown();
+            this.sigmaLbl = new System.Windows.Forms.Label();
+            this.mNumeric = new System.Windows.Forms.NumericUpDown();
+            this.mLbl = new System.Windows.Forms.Label();
             this.seedBox = new System.Windows.Forms.GroupBox();
             this.seedNumeric = new System.Windows.Forms.NumericUpDown();
             this.useRandomSeedCheck = new System.Windows.Forms.CheckBox();
@@ -50,18 +61,10 @@
             this.widthNumeric = new System.Windows.Forms.NumericUpDown();
             this.widthLbl = new System.Windows.Forms.Label();
             this.generateBtn = new System.Windows.Forms.Button();
-            this.lambdaNumeric = new System.Windows.Forms.NumericUpDown();
-            this.lambdaLbl = new System.Windows.Forms.Label();
-            this.lambdaErlangNumeric = new System.Windows.Forms.NumericUpDown();
-            this.lambdaLbl2 = new System.Windows.Forms.Label();
-            this.nNumeric = new System.Windows.Forms.NumericUpDown();
-            this.nLbl = new System.Windows.Forms.Label();
-            this.normalTab = new System.Windows.Forms.TabPage();
-            this.sigmaNumeric = new System.Windows.Forms.NumericUpDown();
-            this.sigmaLbl = new System.Windows.Forms.Label();
-            this.mNumeric = new System.Windows.Forms.NumericUpDown();
-            this.mLbl = new System.Windows.Forms.Label();
             this.numberPageList = new GenerationApplication.NumberPageList();
+            this.poissonTab = new System.Windows.Forms.TabPage();
+            this.poissonLambdaNumeric = new System.Windows.Forms.NumericUpDown();
+            this.poissonLambdaLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.histogramPicBox)).BeginInit();
             this.configurationBox.SuspendLayout();
             this.distributionTabControl.SuspendLayout();
@@ -69,19 +72,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.bNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNumeric)).BeginInit();
             this.exponentialTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lambdaNumeric)).BeginInit();
             this.erlangTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lambdaErlangNumeric)).BeginInit();
+            this.normalTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sigmaNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mNumeric)).BeginInit();
             this.seedBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seedNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elementsCountNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupCountNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.widthNumeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lambdaNumeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lambdaErlangNumeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nNumeric)).BeginInit();
-            this.normalTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sigmaNumeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mNumeric)).BeginInit();
+            this.poissonTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.poissonLambdaNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // histogramPicBox
@@ -123,6 +128,7 @@
             this.distributionTabControl.Controls.Add(this.exponentialTab);
             this.distributionTabControl.Controls.Add(this.erlangTab);
             this.distributionTabControl.Controls.Add(this.normalTab);
+            this.distributionTabControl.Controls.Add(this.poissonTab);
             this.distributionTabControl.Location = new System.Drawing.Point(8, 202);
             this.distributionTabControl.Multiline = true;
             this.distributionTabControl.Name = "distributionTabControl";
@@ -219,6 +225,40 @@
             this.exponentialTab.TabIndex = 1;
             this.exponentialTab.Text = "Exponential";
             // 
+            // lambdaNumeric
+            // 
+            this.lambdaNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lambdaNumeric.DecimalPlaces = 3;
+            this.lambdaNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
+            this.lambdaNumeric.Location = new System.Drawing.Point(30, 6);
+            this.lambdaNumeric.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.lambdaNumeric.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.lambdaNumeric.Name = "lambdaNumeric";
+            this.lambdaNumeric.Size = new System.Drawing.Size(178, 20);
+            this.lambdaNumeric.TabIndex = 7;
+            this.lambdaNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lambdaLbl
+            // 
+            this.lambdaLbl.AutoSize = true;
+            this.lambdaLbl.Location = new System.Drawing.Point(8, 8);
+            this.lambdaLbl.Name = "lambdaLbl";
+            this.lambdaLbl.Size = new System.Drawing.Size(17, 14);
+            this.lambdaLbl.TabIndex = 6;
+            this.lambdaLbl.Text = "λ:";
+            // 
             // erlangTab
             // 
             this.erlangTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(174)))), ((int)(((byte)(212)))));
@@ -226,12 +266,156 @@
             this.erlangTab.Controls.Add(this.nLbl);
             this.erlangTab.Controls.Add(this.lambdaErlangNumeric);
             this.erlangTab.Controls.Add(this.lambdaLbl2);
-            this.erlangTab.Location = new System.Drawing.Point(4, 42);
+            this.erlangTab.Location = new System.Drawing.Point(4, 23);
             this.erlangTab.Name = "erlangTab";
             this.erlangTab.Padding = new System.Windows.Forms.Padding(3);
-            this.erlangTab.Size = new System.Drawing.Size(214, 58);
+            this.erlangTab.Size = new System.Drawing.Size(214, 77);
             this.erlangTab.TabIndex = 2;
             this.erlangTab.Text = "Erlang";
+            // 
+            // nNumeric
+            // 
+            this.nNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.nNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
+            this.nNumeric.Location = new System.Drawing.Point(30, 32);
+            this.nNumeric.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nNumeric.Name = "nNumeric";
+            this.nNumeric.Size = new System.Drawing.Size(178, 20);
+            this.nNumeric.TabIndex = 11;
+            this.nNumeric.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // nLbl
+            // 
+            this.nLbl.AutoSize = true;
+            this.nLbl.Location = new System.Drawing.Point(8, 34);
+            this.nLbl.Name = "nLbl";
+            this.nLbl.Size = new System.Drawing.Size(17, 14);
+            this.nLbl.TabIndex = 10;
+            this.nLbl.Text = "n:";
+            // 
+            // lambdaErlangNumeric
+            // 
+            this.lambdaErlangNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lambdaErlangNumeric.DecimalPlaces = 3;
+            this.lambdaErlangNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
+            this.lambdaErlangNumeric.Location = new System.Drawing.Point(30, 6);
+            this.lambdaErlangNumeric.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.lambdaErlangNumeric.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.lambdaErlangNumeric.Name = "lambdaErlangNumeric";
+            this.lambdaErlangNumeric.Size = new System.Drawing.Size(178, 20);
+            this.lambdaErlangNumeric.TabIndex = 9;
+            this.lambdaErlangNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lambdaLbl2
+            // 
+            this.lambdaLbl2.AutoSize = true;
+            this.lambdaLbl2.Location = new System.Drawing.Point(8, 8);
+            this.lambdaLbl2.Name = "lambdaLbl2";
+            this.lambdaLbl2.Size = new System.Drawing.Size(17, 14);
+            this.lambdaLbl2.TabIndex = 8;
+            this.lambdaLbl2.Text = "λ:";
+            // 
+            // normalTab
+            // 
+            this.normalTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(174)))), ((int)(((byte)(212)))));
+            this.normalTab.Controls.Add(this.sigmaNumeric);
+            this.normalTab.Controls.Add(this.sigmaLbl);
+            this.normalTab.Controls.Add(this.mNumeric);
+            this.normalTab.Controls.Add(this.mLbl);
+            this.normalTab.Location = new System.Drawing.Point(4, 42);
+            this.normalTab.Name = "normalTab";
+            this.normalTab.Padding = new System.Windows.Forms.Padding(3);
+            this.normalTab.Size = new System.Drawing.Size(214, 58);
+            this.normalTab.TabIndex = 3;
+            this.normalTab.Text = "Normal";
+            // 
+            // sigmaNumeric
+            // 
+            this.sigmaNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.sigmaNumeric.DecimalPlaces = 3;
+            this.sigmaNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
+            this.sigmaNumeric.Location = new System.Drawing.Point(29, 32);
+            this.sigmaNumeric.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.sigmaNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            524288});
+            this.sigmaNumeric.Name = "sigmaNumeric";
+            this.sigmaNumeric.Size = new System.Drawing.Size(178, 20);
+            this.sigmaNumeric.TabIndex = 11;
+            this.sigmaNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // sigmaLbl
+            // 
+            this.sigmaLbl.AutoSize = true;
+            this.sigmaLbl.Location = new System.Drawing.Point(7, 34);
+            this.sigmaLbl.Name = "sigmaLbl";
+            this.sigmaLbl.Size = new System.Drawing.Size(18, 14);
+            this.sigmaLbl.TabIndex = 10;
+            this.sigmaLbl.Text = "σ:";
+            // 
+            // mNumeric
+            // 
+            this.mNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.mNumeric.DecimalPlaces = 3;
+            this.mNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
+            this.mNumeric.Location = new System.Drawing.Point(29, 6);
+            this.mNumeric.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.mNumeric.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.mNumeric.Name = "mNumeric";
+            this.mNumeric.Size = new System.Drawing.Size(178, 20);
+            this.mNumeric.TabIndex = 9;
+            // 
+            // mLbl
+            // 
+            this.mLbl.AutoSize = true;
+            this.mLbl.Location = new System.Drawing.Point(7, 8);
+            this.mLbl.Name = "mLbl";
+            this.mLbl.Size = new System.Drawing.Size(17, 14);
+            this.mLbl.TabIndex = 8;
+            this.mLbl.Text = "μ:";
             // 
             // seedBox
             // 
@@ -432,193 +616,60 @@
             this.generateBtn.UseVisualStyleBackColor = true;
             this.generateBtn.Click += new System.EventHandler(this.generateBtn_Click);
             // 
-            // lambdaNumeric
-            // 
-            this.lambdaNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lambdaNumeric.DecimalPlaces = 3;
-            this.lambdaNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
-            this.lambdaNumeric.Location = new System.Drawing.Point(30, 6);
-            this.lambdaNumeric.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.lambdaNumeric.Minimum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            -2147483648});
-            this.lambdaNumeric.Name = "lambdaNumeric";
-            this.lambdaNumeric.Size = new System.Drawing.Size(178, 20);
-            this.lambdaNumeric.TabIndex = 7;
-            this.lambdaNumeric.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // lambdaLbl
-            // 
-            this.lambdaLbl.AutoSize = true;
-            this.lambdaLbl.Location = new System.Drawing.Point(8, 8);
-            this.lambdaLbl.Name = "lambdaLbl";
-            this.lambdaLbl.Size = new System.Drawing.Size(17, 14);
-            this.lambdaLbl.TabIndex = 6;
-            this.lambdaLbl.Text = "λ:";
-            // 
-            // lambdaErlangNumeric
-            // 
-            this.lambdaErlangNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lambdaErlangNumeric.DecimalPlaces = 3;
-            this.lambdaErlangNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
-            this.lambdaErlangNumeric.Location = new System.Drawing.Point(30, 6);
-            this.lambdaErlangNumeric.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.lambdaErlangNumeric.Minimum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            -2147483648});
-            this.lambdaErlangNumeric.Name = "lambdaErlangNumeric";
-            this.lambdaErlangNumeric.Size = new System.Drawing.Size(178, 20);
-            this.lambdaErlangNumeric.TabIndex = 9;
-            this.lambdaErlangNumeric.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // lambdaLbl2
-            // 
-            this.lambdaLbl2.AutoSize = true;
-            this.lambdaLbl2.Location = new System.Drawing.Point(8, 8);
-            this.lambdaLbl2.Name = "lambdaLbl2";
-            this.lambdaLbl2.Size = new System.Drawing.Size(17, 14);
-            this.lambdaLbl2.TabIndex = 8;
-            this.lambdaLbl2.Text = "λ:";
-            // 
-            // nNumeric
-            // 
-            this.nNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.nNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
-            this.nNumeric.Location = new System.Drawing.Point(30, 32);
-            this.nNumeric.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.nNumeric.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nNumeric.Name = "nNumeric";
-            this.nNumeric.Size = new System.Drawing.Size(178, 20);
-            this.nNumeric.TabIndex = 11;
-            this.nNumeric.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            // 
-            // nLbl
-            // 
-            this.nLbl.AutoSize = true;
-            this.nLbl.Location = new System.Drawing.Point(8, 34);
-            this.nLbl.Name = "nLbl";
-            this.nLbl.Size = new System.Drawing.Size(17, 14);
-            this.nLbl.TabIndex = 10;
-            this.nLbl.Text = "n:";
-            // 
-            // normalTab
-            // 
-            this.normalTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(174)))), ((int)(((byte)(212)))));
-            this.normalTab.Controls.Add(this.sigmaNumeric);
-            this.normalTab.Controls.Add(this.sigmaLbl);
-            this.normalTab.Controls.Add(this.mNumeric);
-            this.normalTab.Controls.Add(this.mLbl);
-            this.normalTab.Location = new System.Drawing.Point(4, 42);
-            this.normalTab.Name = "normalTab";
-            this.normalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.normalTab.Size = new System.Drawing.Size(214, 58);
-            this.normalTab.TabIndex = 3;
-            this.normalTab.Text = "Normal";
-            // 
-            // sigmaNumeric
-            // 
-            this.sigmaNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.sigmaNumeric.DecimalPlaces = 3;
-            this.sigmaNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
-            this.sigmaNumeric.Location = new System.Drawing.Point(29, 32);
-            this.sigmaNumeric.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.sigmaNumeric.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            524288});
-            this.sigmaNumeric.Name = "sigmaNumeric";
-            this.sigmaNumeric.Size = new System.Drawing.Size(178, 20);
-            this.sigmaNumeric.TabIndex = 11;
-            this.sigmaNumeric.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // sigmaLbl
-            // 
-            this.sigmaLbl.AutoSize = true;
-            this.sigmaLbl.Location = new System.Drawing.Point(7, 34);
-            this.sigmaLbl.Name = "sigmaLbl";
-            this.sigmaLbl.Size = new System.Drawing.Size(18, 14);
-            this.sigmaLbl.TabIndex = 10;
-            this.sigmaLbl.Text = "σ:";
-            // 
-            // mNumeric
-            // 
-            this.mNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.mNumeric.DecimalPlaces = 3;
-            this.mNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
-            this.mNumeric.Location = new System.Drawing.Point(29, 6);
-            this.mNumeric.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.mNumeric.Minimum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            -2147483648});
-            this.mNumeric.Name = "mNumeric";
-            this.mNumeric.Size = new System.Drawing.Size(178, 20);
-            this.mNumeric.TabIndex = 9;
-            // 
-            // mLbl
-            // 
-            this.mLbl.AutoSize = true;
-            this.mLbl.Location = new System.Drawing.Point(7, 8);
-            this.mLbl.Name = "mLbl";
-            this.mLbl.Size = new System.Drawing.Size(17, 14);
-            this.mLbl.TabIndex = 8;
-            this.mLbl.Text = "μ:";
-            // 
             // numberPageList
             // 
             this.numberPageList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numberPageList.Location = new System.Drawing.Point(536, 386);
+            this.numberPageList.Location = new System.Drawing.Point(535, 386);
             this.numberPageList.Name = "numberPageList";
             this.numberPageList.NumberList = null;
             this.numberPageList.Size = new System.Drawing.Size(236, 163);
             this.numberPageList.TabIndex = 4;
+            // 
+            // poissonTab
+            // 
+            this.poissonTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(174)))), ((int)(((byte)(212)))));
+            this.poissonTab.Controls.Add(this.poissonLambdaNumeric);
+            this.poissonTab.Controls.Add(this.poissonLambdaLbl);
+            this.poissonTab.Location = new System.Drawing.Point(4, 42);
+            this.poissonTab.Name = "poissonTab";
+            this.poissonTab.Size = new System.Drawing.Size(214, 58);
+            this.poissonTab.TabIndex = 4;
+            this.poissonTab.Text = "Poisson";
+            // 
+            // poissonLambdaNumeric
+            // 
+            this.poissonLambdaNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.poissonLambdaNumeric.DecimalPlaces = 3;
+            this.poissonLambdaNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
+            this.poissonLambdaNumeric.Location = new System.Drawing.Point(30, 6);
+            this.poissonLambdaNumeric.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.poissonLambdaNumeric.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.poissonLambdaNumeric.Name = "poissonLambdaNumeric";
+            this.poissonLambdaNumeric.Size = new System.Drawing.Size(178, 20);
+            this.poissonLambdaNumeric.TabIndex = 9;
+            this.poissonLambdaNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // poissonLambdaLbl
+            // 
+            this.poissonLambdaLbl.AutoSize = true;
+            this.poissonLambdaLbl.Location = new System.Drawing.Point(8, 8);
+            this.poissonLambdaLbl.Name = "poissonLambdaLbl";
+            this.poissonLambdaLbl.Size = new System.Drawing.Size(17, 14);
+            this.poissonLambdaLbl.TabIndex = 8;
+            this.poissonLambdaLbl.Text = "λ:";
             // 
             // GeneartionMainForm
             // 
@@ -644,8 +695,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.aNumeric)).EndInit();
             this.exponentialTab.ResumeLayout(false);
             this.exponentialTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lambdaNumeric)).EndInit();
             this.erlangTab.ResumeLayout(false);
             this.erlangTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lambdaErlangNumeric)).EndInit();
+            this.normalTab.ResumeLayout(false);
+            this.normalTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sigmaNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mNumeric)).EndInit();
             this.seedBox.ResumeLayout(false);
             this.seedBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seedNumeric)).EndInit();
@@ -653,13 +711,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupCountNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.widthNumeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lambdaNumeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lambdaErlangNumeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nNumeric)).EndInit();
-            this.normalTab.ResumeLayout(false);
-            this.normalTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sigmaNumeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mNumeric)).EndInit();
+            this.poissonTab.ResumeLayout(false);
+            this.poissonTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.poissonLambdaNumeric)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -700,6 +754,9 @@
         private System.Windows.Forms.Label sigmaLbl;
         private System.Windows.Forms.NumericUpDown mNumeric;
         private System.Windows.Forms.Label mLbl;
+        private System.Windows.Forms.TabPage poissonTab;
+        private System.Windows.Forms.NumericUpDown poissonLambdaNumeric;
+        private System.Windows.Forms.Label poissonLambdaLbl;
     }
 }
 

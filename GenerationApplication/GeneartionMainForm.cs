@@ -66,6 +66,12 @@ namespace GenerationApplication
                             generator = useRandomSeed ? new NormalGenerator(m, sigma) : new NormalGenerator(seed, m, sigma);
                             break; 
                         }
+                    case "Poisson":
+                        {
+                            double lambda = (double)poissonLambdaNumeric.Value;
+                            generator = useRandomSeed ? new PoissonGenerator(lambda) : new PoissonGenerator(seed, lambda);
+                            break;
+                        }
                     default:
                         {
                             return;
