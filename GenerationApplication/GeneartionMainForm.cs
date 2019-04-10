@@ -119,6 +119,69 @@ namespace GenerationApplication
             e.Graphics.DrawRectangle(new Pen(_foregroundColor), box.DisplayRectangle);
             e.Graphics.DrawString(box.Text, box.Font, new SolidBrush(_foregroundColor), 0, 0);
         }
-        
+
+        private void generateReportBtn_Click(object sender, EventArgs e)
+        {
+            string distribution = distributionTabControl.SelectedTab.Text;
+            TransferData transferData = null;
+
+            switch (distribution)
+            {
+                case "Uniform":
+                    {
+                        transferData = new TransferData()
+                        {
+                            A = (double)aNumeric.Value,
+                            B = (double)bNumeric.Value,
+                            Distribution = DistributionEnum.Uniform
+                        };
+                        break;
+                    }
+                case "Exponential":
+                    {
+                        transferData = new TransferData()
+                        {
+                            Lambda = (double)lambdaNumeric.Value,
+                            Distribution = DistributionEnum.Exponential
+                        };
+                        break;
+                    }
+                case "Erlang":
+                    {
+                        transferData = new TransferData()
+                        {
+                            Lambda = (double)lambdaErlangNumeric.Value,
+                            N = (int)nNumeric.Value,
+                            Distribution = DistributionEnum.Erlang
+                        };
+                        break;
+                    }
+                case "Normal":
+                    {
+                        transferData = new TransferData()
+                        {
+                            Mu = (double)mNumeric.Value,
+                            Sigma = (double)sigmaNumeric.Value,
+                            Distribution = DistributionEnum.Normal
+                        };
+                        break;
+                    }
+                case "Poisson":
+                    {
+                        transferData = new TransferData()
+                        {
+                            Lambda = (double)poissonLambdaNumeric.Value,
+                            Distribution = DistributionEnum.Poisson
+                        };
+                        break;
+                    }
+            }
+
+            if (transferData != null)
+            {
+                transferData.Numbers = numberPageList.NumberList;
+                new ReportForm(transferData).Show();
+            }
+        }
     }
 }

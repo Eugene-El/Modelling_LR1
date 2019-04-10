@@ -61,10 +61,11 @@
             this.widthNumeric = new System.Windows.Forms.NumericUpDown();
             this.widthLbl = new System.Windows.Forms.Label();
             this.generateBtn = new System.Windows.Forms.Button();
-            this.numberPageList = new GenerationApplication.NumberPageList();
             this.poissonTab = new System.Windows.Forms.TabPage();
             this.poissonLambdaNumeric = new System.Windows.Forms.NumericUpDown();
             this.poissonLambdaLbl = new System.Windows.Forms.Label();
+            this.generateReportBtn = new System.Windows.Forms.Button();
+            this.numberPageList = new GenerationApplication.NumberPageList();
             ((System.ComponentModel.ISupportInitialize)(this.histogramPicBox)).BeginInit();
             this.configurationBox.SuspendLayout();
             this.distributionTabControl.SuspendLayout();
@@ -266,10 +267,10 @@
             this.erlangTab.Controls.Add(this.nLbl);
             this.erlangTab.Controls.Add(this.lambdaErlangNumeric);
             this.erlangTab.Controls.Add(this.lambdaLbl2);
-            this.erlangTab.Location = new System.Drawing.Point(4, 23);
+            this.erlangTab.Location = new System.Drawing.Point(4, 42);
             this.erlangTab.Name = "erlangTab";
             this.erlangTab.Padding = new System.Windows.Forms.Padding(3);
-            this.erlangTab.Size = new System.Drawing.Size(214, 77);
+            this.erlangTab.Size = new System.Drawing.Size(214, 58);
             this.erlangTab.TabIndex = 2;
             this.erlangTab.Text = "Erlang";
             // 
@@ -610,21 +611,11 @@
             this.generateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
             this.generateBtn.Location = new System.Drawing.Point(536, 333);
             this.generateBtn.Name = "generateBtn";
-            this.generateBtn.Size = new System.Drawing.Size(236, 47);
+            this.generateBtn.Size = new System.Drawing.Size(236, 25);
             this.generateBtn.TabIndex = 3;
             this.generateBtn.Text = "Generate";
             this.generateBtn.UseVisualStyleBackColor = true;
             this.generateBtn.Click += new System.EventHandler(this.generateBtn_Click);
-            // 
-            // numberPageList
-            // 
-            this.numberPageList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numberPageList.Location = new System.Drawing.Point(535, 386);
-            this.numberPageList.Name = "numberPageList";
-            this.numberPageList.NumberList = null;
-            this.numberPageList.Size = new System.Drawing.Size(236, 163);
-            this.numberPageList.TabIndex = 4;
             // 
             // poissonTab
             // 
@@ -671,12 +662,35 @@
             this.poissonLambdaLbl.TabIndex = 8;
             this.poissonLambdaLbl.Text = "λ:";
             // 
+            // generateReportBtn
+            // 
+            this.generateReportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.generateReportBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
+            this.generateReportBtn.Location = new System.Drawing.Point(536, 364);
+            this.generateReportBtn.Name = "generateReportBtn";
+            this.generateReportBtn.Size = new System.Drawing.Size(236, 25);
+            this.generateReportBtn.TabIndex = 5;
+            this.generateReportBtn.Text = "Generate report";
+            this.generateReportBtn.UseVisualStyleBackColor = true;
+            this.generateReportBtn.Click += new System.EventHandler(this.generateReportBtn_Click);
+            // 
+            // numberPageList
+            // 
+            this.numberPageList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numberPageList.Location = new System.Drawing.Point(535, 395);
+            this.numberPageList.Name = "numberPageList";
+            this.numberPageList.NumberList = null;
+            this.numberPageList.Size = new System.Drawing.Size(236, 154);
+            this.numberPageList.TabIndex = 4;
+            // 
             // GeneartionMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(174)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.generateReportBtn);
             this.Controls.Add(this.numberPageList);
             this.Controls.Add(this.generateBtn);
             this.Controls.Add(this.configurationBox);
@@ -757,6 +771,7 @@
         private System.Windows.Forms.TabPage poissonTab;
         private System.Windows.Forms.NumericUpDown poissonLambdaNumeric;
         private System.Windows.Forms.Label poissonLambdaLbl;
+        private System.Windows.Forms.Button generateReportBtn;
     }
 }
 
