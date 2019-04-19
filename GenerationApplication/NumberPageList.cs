@@ -40,8 +40,8 @@ namespace GenerationApplication
             }
         }
 
-        public int PageSize { get { return Height / 15; } }
-        public int PageCount { get { return _numberList == null? 0 : ( _numberList.Count / PageSize + ((_numberList.Count % PageSize == 0)? 0 : 1) ); } }
+        public int PageSize { get { return (Height-20) / 14; } }
+        public int PageCount { get { return (_numberList == null || PageSize == 0) ? 0 : ( _numberList.Count / PageSize + ((_numberList.Count % PageSize == 0)? 0 : 1) ); } }
 
         private int _page;
         public int Page

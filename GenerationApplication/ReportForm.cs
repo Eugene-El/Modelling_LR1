@@ -27,6 +27,9 @@ namespace GenerationApplication
 
         private void GetStandartStatistic()
         {
+            _transferData.Numbers.Sort();
+            mainStatNumPg.NumberList = _transferData.Numbers;
+
             nLbl.Text = _transferData.Numbers.Count.ToString();
             minLbl.Text = _transferData.Numbers.Min().ToString();
             maxLbl.Text = _transferData.Numbers.Max().ToString();
@@ -42,7 +45,7 @@ namespace GenerationApplication
         private void testBtn_Click(object sender, EventArgs e)
         {
             double alpha = (double)alphaNumeric.Value;
-            double opgBorder = Math.Sqrt(-Math.Log( (1-alpha) / 2) / 2);
+            double opgBorder = Math.Sqrt(-Math.Log( (alpha) / 2) / 2);
 
             opgLbl.Text = "(0; " + opgBorder.ToString() + ")";
 
@@ -79,7 +82,23 @@ namespace GenerationApplication
                 default: return;
             }
 
-            double KS = GetKolmogorovSmirnov( generator.Generate(_transferData.Numbers.Count).ToList() );
+            List<double> newGenerated = generator.Generate(_transferData.Numbers.Count).ToList();
+            newGenerated.Sort();
+
+            exStatNumPg.NumberList = newGenerated;
+
+            exNLbl.Text = newGenerated.Count.ToString();
+            exMinLbl.Text = newGenerated.Min().ToString();
+            exMaxLbl.Text = newGenerated.Max().ToString();
+            exMeanLbl.Text = newGenerated.Average().ToString();
+
+            exStdDevLbl.Text = Math.Sqrt(
+                newGenerated.Sum((num) => { return Math.Pow(num - newGenerated.Average(), 2); })
+                / newGenerated.Count)
+                .ToString();
+
+
+            double KS = GetKolmogorovSmirnov(newGenerated);
 
             ksLbl.Text = KS.ToString();
         }
@@ -91,10 +110,6 @@ namespace GenerationApplication
             if (_transferData.Numbers.Count != list.Count)
                 throw new Exception("Diferent count of numbers in samples");
 
-            // Sort samples
-            _transferData.Numbers.Sort();
-            list.Sort();
-
             // Get max distance
             double D = 0;
             for (int i = 0; i < _transferData.Numbers.Count; i++)
@@ -104,7 +119,7 @@ namespace GenerationApplication
                     D = dif;
             }
 
-            // Get Kolmogorov Smirnov
+            ksWithoutLbl.Text = D.ToString();
             return D * Math.Sqrt(Math.Pow(list.Count, 2) / (2 * list.Count));
         }
     }

@@ -49,6 +49,9 @@
             this.sigmaLbl = new System.Windows.Forms.Label();
             this.mNumeric = new System.Windows.Forms.NumericUpDown();
             this.mLbl = new System.Windows.Forms.Label();
+            this.poissonTab = new System.Windows.Forms.TabPage();
+            this.poissonLambdaNumeric = new System.Windows.Forms.NumericUpDown();
+            this.poissonLambdaLbl = new System.Windows.Forms.Label();
             this.seedBox = new System.Windows.Forms.GroupBox();
             this.seedNumeric = new System.Windows.Forms.NumericUpDown();
             this.useRandomSeedCheck = new System.Windows.Forms.CheckBox();
@@ -61,9 +64,6 @@
             this.widthNumeric = new System.Windows.Forms.NumericUpDown();
             this.widthLbl = new System.Windows.Forms.Label();
             this.generateBtn = new System.Windows.Forms.Button();
-            this.poissonTab = new System.Windows.Forms.TabPage();
-            this.poissonLambdaNumeric = new System.Windows.Forms.NumericUpDown();
-            this.poissonLambdaLbl = new System.Windows.Forms.Label();
             this.generateReportBtn = new System.Windows.Forms.Button();
             this.numberPageList = new GenerationApplication.NumberPageList();
             ((System.ComponentModel.ISupportInitialize)(this.histogramPicBox)).BeginInit();
@@ -80,14 +80,14 @@
             this.normalTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sigmaNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mNumeric)).BeginInit();
+            this.poissonTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.poissonLambdaNumeric)).BeginInit();
             this.seedBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seedNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elementsCountNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupCountNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.widthNumeric)).BeginInit();
-            this.poissonTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.poissonLambdaNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // histogramPicBox
@@ -97,7 +97,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.histogramPicBox.Location = new System.Drawing.Point(14, 13);
             this.histogramPicBox.Name = "histogramPicBox";
-            this.histogramPicBox.Size = new System.Drawing.Size(516, 536);
+            this.histogramPicBox.Size = new System.Drawing.Size(516, 532);
             this.histogramPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.histogramPicBox.TabIndex = 0;
             this.histogramPicBox.TabStop = false;
@@ -418,6 +418,51 @@
             this.mLbl.TabIndex = 8;
             this.mLbl.Text = "μ:";
             // 
+            // poissonTab
+            // 
+            this.poissonTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(174)))), ((int)(((byte)(212)))));
+            this.poissonTab.Controls.Add(this.poissonLambdaNumeric);
+            this.poissonTab.Controls.Add(this.poissonLambdaLbl);
+            this.poissonTab.Location = new System.Drawing.Point(4, 42);
+            this.poissonTab.Name = "poissonTab";
+            this.poissonTab.Size = new System.Drawing.Size(214, 58);
+            this.poissonTab.TabIndex = 4;
+            this.poissonTab.Text = "Poisson";
+            // 
+            // poissonLambdaNumeric
+            // 
+            this.poissonLambdaNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.poissonLambdaNumeric.DecimalPlaces = 3;
+            this.poissonLambdaNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
+            this.poissonLambdaNumeric.Location = new System.Drawing.Point(30, 6);
+            this.poissonLambdaNumeric.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.poissonLambdaNumeric.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.poissonLambdaNumeric.Name = "poissonLambdaNumeric";
+            this.poissonLambdaNumeric.Size = new System.Drawing.Size(178, 20);
+            this.poissonLambdaNumeric.TabIndex = 9;
+            this.poissonLambdaNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // poissonLambdaLbl
+            // 
+            this.poissonLambdaLbl.AutoSize = true;
+            this.poissonLambdaLbl.Location = new System.Drawing.Point(8, 8);
+            this.poissonLambdaLbl.Name = "poissonLambdaLbl";
+            this.poissonLambdaLbl.Size = new System.Drawing.Size(17, 14);
+            this.poissonLambdaLbl.TabIndex = 8;
+            this.poissonLambdaLbl.Text = "λ:";
+            // 
             // seedBox
             // 
             this.seedBox.Controls.Add(this.seedNumeric);
@@ -617,54 +662,10 @@
             this.generateBtn.UseVisualStyleBackColor = true;
             this.generateBtn.Click += new System.EventHandler(this.generateBtn_Click);
             // 
-            // poissonTab
-            // 
-            this.poissonTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(174)))), ((int)(((byte)(212)))));
-            this.poissonTab.Controls.Add(this.poissonLambdaNumeric);
-            this.poissonTab.Controls.Add(this.poissonLambdaLbl);
-            this.poissonTab.Location = new System.Drawing.Point(4, 42);
-            this.poissonTab.Name = "poissonTab";
-            this.poissonTab.Size = new System.Drawing.Size(214, 58);
-            this.poissonTab.TabIndex = 4;
-            this.poissonTab.Text = "Poisson";
-            // 
-            // poissonLambdaNumeric
-            // 
-            this.poissonLambdaNumeric.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.poissonLambdaNumeric.DecimalPlaces = 3;
-            this.poissonLambdaNumeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
-            this.poissonLambdaNumeric.Location = new System.Drawing.Point(30, 6);
-            this.poissonLambdaNumeric.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.poissonLambdaNumeric.Minimum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            -2147483648});
-            this.poissonLambdaNumeric.Name = "poissonLambdaNumeric";
-            this.poissonLambdaNumeric.Size = new System.Drawing.Size(178, 20);
-            this.poissonLambdaNumeric.TabIndex = 9;
-            this.poissonLambdaNumeric.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // poissonLambdaLbl
-            // 
-            this.poissonLambdaLbl.AutoSize = true;
-            this.poissonLambdaLbl.Location = new System.Drawing.Point(8, 8);
-            this.poissonLambdaLbl.Name = "poissonLambdaLbl";
-            this.poissonLambdaLbl.Size = new System.Drawing.Size(17, 14);
-            this.poissonLambdaLbl.TabIndex = 8;
-            this.poissonLambdaLbl.Text = "λ:";
-            // 
             // generateReportBtn
             // 
             this.generateReportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.generateReportBtn.Enabled = false;
             this.generateReportBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(104)))), ((int)(((byte)(87)))));
             this.generateReportBtn.Location = new System.Drawing.Point(536, 364);
             this.generateReportBtn.Name = "generateReportBtn";
@@ -678,10 +679,10 @@
             // 
             this.numberPageList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numberPageList.Location = new System.Drawing.Point(535, 395);
+            this.numberPageList.Location = new System.Drawing.Point(536, 395);
             this.numberPageList.Name = "numberPageList";
             this.numberPageList.NumberList = null;
-            this.numberPageList.Size = new System.Drawing.Size(236, 154);
+            this.numberPageList.Size = new System.Drawing.Size(236, 150);
             this.numberPageList.TabIndex = 4;
             // 
             // GeneartionMainForm
@@ -718,6 +719,9 @@
             this.normalTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sigmaNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mNumeric)).EndInit();
+            this.poissonTab.ResumeLayout(false);
+            this.poissonTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.poissonLambdaNumeric)).EndInit();
             this.seedBox.ResumeLayout(false);
             this.seedBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seedNumeric)).EndInit();
@@ -725,9 +729,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupCountNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.widthNumeric)).EndInit();
-            this.poissonTab.ResumeLayout(false);
-            this.poissonTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.poissonLambdaNumeric)).EndInit();
             this.ResumeLayout(false);
 
         }

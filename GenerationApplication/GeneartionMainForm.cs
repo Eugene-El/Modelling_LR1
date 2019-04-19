@@ -95,6 +95,7 @@ namespace GenerationApplication
                     histogramPicBox.Image = histogramImage;
                 });
             });
+            generateReportBtn.Enabled = true;
 
         }
 
