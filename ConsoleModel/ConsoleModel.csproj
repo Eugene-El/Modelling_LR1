@@ -54,6 +54,10 @@
       <Project>{41D6CBCC-9A1C-44D5-9172-A940A8D94B8C}</Project>
       <Name>GenerationLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ModellingLib\ModellingLib.csproj">
+      <Project>{74200D52-C074-4A39-8087-8C5BAB6C2704}</Project>
+      <Name>ModellingLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StatisticLib\StatisticLib.csproj">
       <Project>{355316A8-D5A1-463F-ABB5-348736EF65B0}</Project>
       <Name>StatisticLib</Name>

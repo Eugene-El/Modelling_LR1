@@ -40,7 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Drain.cs" />
+    <Compile Include="Logs\EventTypeEnum.cs" />
+    <Compile Include="Logs\TransactLog.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="ModelTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queue.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="Source.cs" />
+    <Compile Include="Transact.cs" />
+    <Compile Include="TransactTypeEnum.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenerationLib\GenerationLib.csproj">
+      <Project>{41D6CBCC-9A1C-44D5-9172-A940A8D94B8C}</Project>
+      <Name>GenerationLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
