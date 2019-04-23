@@ -11,10 +11,15 @@ namespace ModellingLib.Logs
         public ModelTime Time { get; private set; }
         public EventTypeEnum Event { get; private set; }
 
-        public TransactLog(ModelTime time, EventTypeEnum eventType)
+        public TransactLog(ModelTime time, EventTypeEnum type)
         {
             Time = new ModelTime() { Time = time.Time };
-            Event = eventType;
+            Event = type;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Time: {0} - {1}", Time, Event);
         }
     }
 }

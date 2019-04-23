@@ -32,6 +32,11 @@ namespace ModellingLib
 
         public override string ToString()
         {
+            return String.Format("Transact #{0} - {1}", Id, Type);
+        }
+
+        public string ToStoryString()
+        {
             string str = "Transact - id: " + Id + ", Story: \n";
             foreach (TransactLog log in _journal)
                 str += "Time: " + log.Time + " " + log.Event.ToString() + "\n";

@@ -45,6 +45,10 @@ namespace ModellingLib
                     Source.NextBGenerationTime,
                     Server.IsNextReleaseTime && !Server.IsFree ? Server.NextReleaseTime : MaxTime);
 
+                if (min == MaxTime)
+                    break;
+                Time.Time = min.Time;
+
                 if (Server.IsNextReleaseTime && !Server.IsFree && min == Server.NextReleaseTime)
                 {
                     var tran = Server.Leave();
@@ -56,10 +60,6 @@ namespace ModellingLib
                 }
                 else
                 {
-                    if (min == MaxTime)
-                        break;
-
-                    Time.Time = min.Time;
                     var tran = Source.Get();
                     Queue.Enter(tran);
 

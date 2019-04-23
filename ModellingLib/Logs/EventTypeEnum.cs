@@ -8,11 +8,11 @@ namespace ModellingLib.Logs
 {
     public enum EventTypeEnum
     {
-        Born,
-        EnterQueue,
-        LeaveQueue,
-        EnterServer,
-        LeaveServer,
-        Death
+        Born = 1,
+        EnterQueue = 2,
+        LeaveQueue = 3,
+        EnterServer = 4,
+        LeaveServer = 5,
+        Death = 6
     }
 }
