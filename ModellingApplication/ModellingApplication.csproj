@@ -46,13 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\TransactExtension.cs" />
     <Compile Include="ModellingMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModellingMainForm.Designer.cs">
       <DependentUpon>ModellingMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelLog.cs" />
+    <Compile Include="Models\ModelLog.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ModellingMainForm.resx">
@@ -90,6 +91,7 @@
       <Name>ModellingLib</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

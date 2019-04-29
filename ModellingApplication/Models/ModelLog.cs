@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModellingApplication
+namespace ModellingApplication.Models
 {
     public class ModelLog
     {

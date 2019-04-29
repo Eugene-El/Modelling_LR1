@@ -1,5 +1,8 @@
 ﻿using GenerationLib;
+using ModellingApplication.Extensions;
+using ModellingApplication.Models;
 using ModellingLib;
+using ModellingLib.Logs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,10 +27,10 @@ namespace ModellingApplication
         private void modelBtn_Click(object sender, EventArgs e)
         {
             _model = new Model(
-                new ErlangGenerator(0.25, 3),
-                new PoissonGenerator(0.5),
-                new NormalGenerator(14, 1.5),
-                new ExponentialGenerator(3),
+                new ErlangGenerator(0.25d, 3),
+                new PoissonGenerator(0.5d),
+                new NormalGenerator(14d, 1.5d),
+                new ExponentialGenerator(3d),
                 new ModelTime() { Time = 500 }
             );
 
@@ -51,10 +54,15 @@ namespace ModellingApplication
             modelLogsBox.DataSource = logs;
         }
 
+
         private void transactsBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var tran = transactsBox.SelectedItem as Transact;
             transactStoryBox.DataSource = tran.GetJournal();
+
+            trLifeTimeLbl.Text = tran.GetLifeTime().ToString();
+            trWaitLbl.Text = tran.GetTimeInQueue().ToString();
+            trServerTimeLbl.Text = tran.GetTimeInServer().ToString();
         }
     }
 }
