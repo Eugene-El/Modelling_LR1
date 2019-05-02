@@ -44,8 +44,6 @@
             this.alphaNumeric = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.checkBox = new System.Windows.Forms.GroupBox();
-            this.ksWithoutLbl = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.ksLbl = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.opgLbl = new System.Windows.Forms.Label();
@@ -235,8 +233,6 @@
             // 
             // checkBox
             // 
-            this.checkBox.Controls.Add(this.ksWithoutLbl);
-            this.checkBox.Controls.Add(this.label10);
             this.checkBox.Controls.Add(this.ksLbl);
             this.checkBox.Controls.Add(this.label8);
             this.checkBox.Controls.Add(this.opgLbl);
@@ -246,30 +242,12 @@
             this.checkBox.Size = new System.Drawing.Size(348, 86);
             this.checkBox.TabIndex = 5;
             this.checkBox.TabStop = false;
-            this.checkBox.Text = "Check";
-            // 
-            // ksWithoutLbl
-            // 
-            this.ksWithoutLbl.AutoSize = true;
-            this.ksWithoutLbl.Location = new System.Drawing.Point(185, 57);
-            this.ksWithoutLbl.Name = "ksWithoutLbl";
-            this.ksWithoutLbl.Size = new System.Drawing.Size(14, 13);
-            this.ksWithoutLbl.TabIndex = 5;
-            this.ksWithoutLbl.Text = "0";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 57);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(133, 13);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "KS without correction:";
+            this.checkBox.Text = "Kolmogorov Smirnov check";
             // 
             // ksLbl
             // 
             this.ksLbl.AutoSize = true;
-            this.ksLbl.Location = new System.Drawing.Point(185, 39);
+            this.ksLbl.Location = new System.Drawing.Point(185, 45);
             this.ksLbl.Name = "ksLbl";
             this.ksLbl.Size = new System.Drawing.Size(14, 13);
             this.ksLbl.TabIndex = 3;
@@ -278,16 +256,16 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 39);
+            this.label8.Location = new System.Drawing.Point(6, 45);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(126, 13);
+            this.label8.Size = new System.Drawing.Size(176, 13);
             this.label8.TabIndex = 2;
-            this.label8.Text = "Kolmogorov Smirnov:";
+            this.label8.Text = "Kolmogorov Smirnov criterion:";
             // 
             // opgLbl
             // 
             this.opgLbl.AutoSize = true;
-            this.opgLbl.Location = new System.Drawing.Point(185, 20);
+            this.opgLbl.Location = new System.Drawing.Point(185, 26);
             this.opgLbl.Name = "opgLbl";
             this.opgLbl.Size = new System.Drawing.Size(37, 13);
             this.opgLbl.TabIndex = 1;
@@ -296,7 +274,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 20);
+            this.label7.Location = new System.Drawing.Point(6, 26);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(173, 13);
             this.label7.TabIndex = 0;
@@ -492,7 +470,5 @@
         private System.Windows.Forms.Label label18;
         private NumberPageList mainStatNumPg;
         private NumberPageList exStatNumPg;
-        private System.Windows.Forms.Label ksWithoutLbl;
-        private System.Windows.Forms.Label label10;
     }
 }

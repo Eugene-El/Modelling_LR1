@@ -35,8 +35,9 @@ namespace GenerationApplication
             maxLbl.Text = _transferData.Numbers.Max().ToString();
             meanLbl.Text = _transferData.Numbers.Average().ToString();
 
+            double average = _transferData.Numbers.Average();
             stdDevLbl.Text = Math.Sqrt(
-                _transferData.Numbers.Sum((num) => { return Math.Pow(num - _transferData.Numbers.Average(), 2); })
+                _transferData.Numbers.Sum((num) => { return Math.Pow(num - average, 2); })
                 / _transferData.Numbers.Count)
                 .ToString();
 
@@ -66,7 +67,7 @@ namespace GenerationApplication
                     }
                 case DistributionEnum.Erlang:
                     {
-                        generator = new GammaDistribution(1 / _transferData.Lambda, _transferData.N);
+                        generator = new ErlangDistribution(_transferData.Lambda, _transferData.N);
                         break;
                     }
                 case DistributionEnum.Normal:
@@ -92,14 +93,14 @@ namespace GenerationApplication
             exMaxLbl.Text = newGenerated.Max().ToString();
             exMeanLbl.Text = newGenerated.Average().ToString();
 
+            double average = newGenerated.Average();
             exStdDevLbl.Text = Math.Sqrt(
-                newGenerated.Sum((num) => { return Math.Pow(num - newGenerated.Average(), 2); })
+                newGenerated.Sum((num) => { return Math.Pow(num - average, 2); })
                 / newGenerated.Count)
                 .ToString();
 
 
             double KS = GetKolmogorovSmirnov(newGenerated);
-
             ksLbl.Text = KS.ToString();
         }
 
@@ -118,10 +119,43 @@ namespace GenerationApplication
                 if (dif > D)
                     D = dif;
             }
-
-            ksWithoutLbl.Text = D.ToString();
-            return D * Math.Sqrt(Math.Pow(list.Count, 2) / (2 * list.Count));
+            
+            return D;
         }
+
+        class ErlangDistribution : IRandomNumberGenerator<double>
+        {
+            private int _n;
+            private ExponentialDistribution _expDis;
+
+            public ErlangDistribution(double lambda, int n)
+            {
+                _n = n;
+                _expDis = new ExponentialDistribution(lambda);
+            }
+
+            public double Generate()
+            {
+                return _expDis.Generate(_n).Sum();
+            }
+
+            public double[] Generate(int samples)
+            {
+                double[] arr = new double[samples];
+                for (int i = 0; i < samples; i++)
+                    arr[i] = Generate();
+                return arr; 
+            }
+
+            public double[] Generate(int samples, double[] result)
+            {
+                result = new double[samples];
+                for (int i = 0; i < samples; i++)
+                    result[i] = Generate();
+                return result;
+            }
+        }
+
     }
     
 }
