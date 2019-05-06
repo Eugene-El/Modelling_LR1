@@ -94,8 +94,11 @@ namespace GenerationApplication
                     histogramPicBox.Image?.Dispose();
                     histogramPicBox.Image = histogramImage;
                 });
+                generateReportBtn.Invoke((MethodInvoker)delegate
+                {
+                    generateReportBtn.Enabled = true;
+                });
             });
-            generateReportBtn.Enabled = true;
 
         }
 
