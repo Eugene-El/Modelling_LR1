@@ -7,7 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,6 +99,8 @@ namespace ModellingApplication
                 Label = "B",
                 YValues = new double[] { bCount }
             });
+
+            exportBtn.Enabled = true;
         }
 
 
@@ -108,6 +112,24 @@ namespace ModellingApplication
             trLifeTimeLbl.Text = tran.GetLifeTime().ToString();
             trWaitLbl.Text = tran.GetTimeInQueue().ToString();
             trServerTimeLbl.Text = tran.GetTimeInServer().ToString();
+        }
+
+        private void exportBtn_Click(object sender, EventArgs e)
+        {
+            exportBtn.Enabled = false;
+
+            string fileName = "ModelLogs.txt";
+            var list = (modelLogsBox.DataSource as IEnumerable<ModelLog>).ToList();
+            var fs = File.Create(fileName);
+            using (StreamWriter sw = new StreamWriter(fs))
+            {
+                foreach (ModelLog log in list)
+                    sw.WriteLine(log.ToString());
+            }
+            fs.Close();
+            Process.Start(fileName);
+
+            exportBtn.Enabled = true;
         }
     }
 }

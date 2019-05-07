@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.modelBtn = new System.Windows.Forms.Button();
             this.transactsBox = new System.Windows.Forms.ListBox();
             this.transactStoryBox = new System.Windows.Forms.ListBox();
@@ -56,6 +56,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.abChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.exportBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.transactInfoBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.abChart)).BeginInit();
@@ -93,7 +94,7 @@
             this.modelLogsBox.FormattingEnabled = true;
             this.modelLogsBox.Location = new System.Drawing.Point(531, 16);
             this.modelLogsBox.Name = "modelLogsBox";
-            this.modelLogsBox.Size = new System.Drawing.Size(441, 420);
+            this.modelLogsBox.Size = new System.Drawing.Size(441, 381);
             this.modelLogsBox.TabIndex = 3;
             // 
             // groupBox1
@@ -296,20 +297,31 @@
             // 
             // abChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.abChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.abChart.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.abChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.abChart.Legends.Add(legend2);
             this.abChart.Location = new System.Drawing.Point(201, 154);
             this.abChart.Name = "abChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.abChart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.abChart.Series.Add(series2);
             this.abChart.Size = new System.Drawing.Size(324, 118);
             this.abChart.TabIndex = 6;
             this.abChart.Text = "chart1";
+            // 
+            // exportBtn
+            // 
+            this.exportBtn.Enabled = false;
+            this.exportBtn.Location = new System.Drawing.Point(532, 404);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(440, 32);
+            this.exportBtn.TabIndex = 7;
+            this.exportBtn.Text = "Export";
+            this.exportBtn.UseVisualStyleBackColor = true;
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
             // ModellingMainForm
             // 
@@ -317,6 +329,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(984, 451);
+            this.Controls.Add(this.exportBtn);
             this.Controls.Add(this.abChart);
             this.Controls.Add(this.transactInfoBox);
             this.Controls.Add(this.groupBox1);
@@ -365,6 +378,7 @@
         private System.Windows.Forms.Label avgTimeInServerLbl;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataVisualization.Charting.Chart abChart;
+        private System.Windows.Forms.Button exportBtn;
     }
 }
 
